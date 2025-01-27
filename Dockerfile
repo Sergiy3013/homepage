@@ -63,4 +63,5 @@ HEALTHCHECK --interval=10s --timeout=3s --start-period=20s \
   CMD wget --no-verbose --tries=1 --spider --no-check-certificate http://localhost:$PORT/api/healthcheck || exit 1
 
 ENTRYPOINT ["docker-entrypoint.sh"]
+ENV HOST=0.0.0.0
 CMD ["node", "server.js"]

@@ -2,7 +2,7 @@ const { i18n } = require("./next-i18next.config");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  server: {
+  serverRuntimeConfig: {
     host: "0.0.0.0",
   },
   reactStrictMode: true,
