@@ -6,6 +6,7 @@ export function middleware(req) {
   const allowedHosts = process.env.HOMEPAGE_ALLOWED_HOSTS
     ? process.env.HOMEPAGE_ALLOWED_HOSTS.split(",").concat(["localhost:3000"])
     : [];
+  console.log("Host: ", host, "Allowed Hosts: ", allowedHosts);
   if (allowedHosts.length && !(host || allowedHosts.includes(host))) {
     return new NextResponse("Invalid Host header", { status: 400 });
   }
